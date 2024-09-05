@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snacks ES6</title>
+    <title>Vue Slider</title>
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="style/style.css">
@@ -19,6 +19,24 @@
 </head>
 
 <body>
+    <h1 class="text-center my-5">Vue Slider</h1>
+    <div id="app">
+        <div class="carousel">
+            <div class="carousel-content">
+                <img :src="slides[currentIndex].image" :alt="slides[currentIndex].title">
+                <div class="carousel-text">
+                    <h2>{{ slides[currentIndex].title }}</h2>
+                    <p>{{ slides[currentIndex].text }}</p>
+                </div>
+            </div>
+            <button @click="prevSlide" class="carousel-button prev" aria-label="Slide precedente">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button @click="nextSlide" class="carousel-button next" aria-label="Slide successiva">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">
@@ -26,15 +44,15 @@
                 <i class="fab fa-github github-icon"></i>
                 <a href="https://github.com/FrancescoSisti" target="_blank">Il mio GitHub</a>
             </span>
-            <span class="footer-text">&copy; 2024 Snacks ES6</span>
+            <span class="footer-text">&copy; 2024 Vue Slider</span>
             <span class="footer-text">Made with ❤️ by Francesco Sisti</span>
         </div>
     </footer>
+
     <!--Link Vue-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Link JS -->
     <script src="script/script.js"></script>
-    </div>
 </body>
 
 </html>
